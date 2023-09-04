@@ -1,0 +1,58 @@
+created 8/11/2023
+
+TODO:
+    [] create a function that checks if device is connected to internet first
+    [] get account for AI service for the long run
+    [] find a way where the code will go to the sight and go into inspect and find the api key when its running or every 24hrs(might not need)
+    [] find a way for it to control smart devices
+
+Issue 1 : 
+    I was not able to excute scripts for whatever reason and need to excute this command so that i would be able 
+    execute scripts and enter into my venv.
+
+            Set-ExecutionPolicy Unrestricted -Scope Process
+
+        found information here:
+            https://stackoverflow.com/questions/18713086/virtualenv-wont-activate-on-windows
+
+Issue 2:
+    the way i get the API key seems to not work for long term. it seems to reset after a while and i need to get another one.
+    to get the API key :
+        1. go to https://bard.google.com/
+        2. right click and inspect 
+        3. in the inspect window go to "Application"
+        4. look for "Cookies" in the "Storage" section 
+        5. click on https://bard.google.com/
+        6. under "Name" look for "__Secure-1PSID" and click on it 
+        7. in the "Cookie Value" section that is the API key
+
+Issue 3.
+    tryin to check internet connection. the import brains check the api ket with google bard and if it cannot 
+    get a connection then the program throws a error and the program terminates.
+    heres a link to different way to connect to internet
+        https://www.tutorialspoint.com/how-to-check-whether-user-s-internet-is-on-or-off-using-python
+
+
+Version Notes:
+    jarvis-v1_0 : 
+        a simple project that allows the use of Google bard with voice activation.
+        it looks for a keyword specified and then starts recording audio so that it can be transcribed to be turn into a 
+        input for the query of Google Bard. it then sends that query to google bard and google bard will give back a response
+        in the terminal window.
+
+    jarvis-v2_0 :
+
+REFERENCES : 
+    Openweather API
+    https://www.instructables.com/Get-Weather-Data-Using-Python-and-Openweather-API/
+
+    OpenAI API
+    https://platform.openai.com/docs/api-reference/introduction
+    https://platform.openai.com/docs/guides/gpt/chat-completions-api
+
+    Google Bard
+    https://aibard.online/bard-api-key/
+    
+    Google Cloud Platform (GCP)
+    https://console.cloud.google.com/
+    
