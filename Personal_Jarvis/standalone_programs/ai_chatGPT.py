@@ -1,9 +1,11 @@
 import openai
+from dotenv import load_dotenv
 import os
 
 # !!! need to purchase a plan or wait for the free credits to renew !!!
+load_dotenv()
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = os.getenv('CHATGPT_API_KEY')
 
 openai.api_key = OPENAI_API_KEY
 

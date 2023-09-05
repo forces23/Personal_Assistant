@@ -9,7 +9,7 @@ from bardapi import Bard
 
 load_dotenv()
 
-API_KEY = os.getenv("BARD_API_KEY")
+API_KEY = os.getenv('BARD_API_KEY')
 
 bard = Bard(token = API_KEY)
 

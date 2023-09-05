@@ -1,8 +1,12 @@
 import requests
 import datetime
+from dotenv import load_dotenv
+import os
 
-BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
-API_KEY = "10a6e45597aa881e175f139b42e2c97a"
+load_dotenv()
+
+BASE_URL = os.getenv('OPEN_WEATHER_URL')
+API_KEY = os.getenv('OPEN_WEATHER_API_KEY')
 
 def convert_unix_to_cst(unix_timestamp):
     datetime_obj = datetime.datetime.fromtimestamp(unix_timestamp)

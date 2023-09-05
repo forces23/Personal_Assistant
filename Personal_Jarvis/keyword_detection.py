@@ -14,9 +14,9 @@ RECORD_SECONDS = 5
 microphone = sr.Microphone(chunk_size=CHUNK)
 recognizer = sr.Recognizer()
 
-KEYWORD = os.getenv("KEYWORD")
+KEYWORD = os.getenv('KEYWORD_1')
 
-OUTPUT_FILE_PATH = os.getenv("WAV_FILE_PATH")
+OUTPUT_FILE_PATH = os.getenv('WAV_FILE_PATH')
 
 def keyword_detection():
     keyword_found = False
