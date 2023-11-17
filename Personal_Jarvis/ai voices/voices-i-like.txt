@@ -1,0 +1,94 @@
+voice 1 
+{
+  "audioConfig": {
+    "audioEncoding": "LINEAR16",
+    "effectsProfileId": [
+      "telephony-class-application"
+    ],
+    "pitch": -3.6,
+    "speakingRate": 1.04
+  },
+  "input": {
+    "text": "sir there are still terabytes of calculations needed before an actual flight plan can be created."
+  },
+  "voice": {
+    "languageCode": "en-GB",
+    "name": "en-GB-Wavenet-B"
+  }
+}
+
+voice 2
+{
+  "audioConfig": {
+    "audioEncoding": "LINEAR16",
+    "effectsProfileId": [
+      "telephony-class-application"
+    ],
+    "pitch": 0.4,
+    "speakingRate": 1.04
+  },
+  "input": {
+    "text": "sir there are still terabytes of calculations needed before an actual flight plan can be created."
+  },
+  "voice": {
+    "languageCode": "en-GB",
+    "name": "en-GB-Neural2-B"
+  }
+}
+
+voice 3
+{
+  "audioConfig": {
+    "audioEncoding": "LINEAR16",
+    "effectsProfileId": [
+      "telephony-class-application"
+    ],
+    "pitch": 0.4,
+    "speakingRate": 1.04
+  },
+  "input": {
+    "text": "sir there are still terabytes of calculations needed before an actual flight plan can be created."
+  },
+  "voice": {
+    "languageCode": "en-GB",
+    "name": "en-GB-News-J"
+  }
+}
+
+voice 4
+{
+  "audioConfig": {
+    "audioEncoding": "LINEAR16",
+    "effectsProfileId": [
+      "telephony-class-application"
+    ],
+    "pitch": 0.4, # or "pitch": 3.6
+    "speakingRate": 1
+  },
+  "input": {
+    "text": "sir there are still terabytes of calculations needed before an actual flight plan can be created."
+  },
+  "voice": {
+    "languageCode": "en-GB",
+    "name": "en-GB-News-K"
+  }
+}
+
+voice 5
+{
+  "audioConfig": {
+    "audioEncoding": "LINEAR16",
+    "effectsProfileId": [
+      "telephony-class-application"
+    ],
+    "pitch": 3.6,
+    "speakingRate": 1.3
+  },
+  "input": {
+    "text": "sir there are still terabytes of calculations needed before an actual flight plan can be created."
+  },
+  "voice": {
+    "languageCode": "en-GB",
+    "name": "en-GB-Standard-D"
+  }
+}

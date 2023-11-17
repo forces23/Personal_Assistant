@@ -55,4 +55,10 @@ REFERENCES :
     
     Google Cloud Platform (GCP)
     https://console.cloud.google.com/
+
+
+
+issues installing these 2 modules 
+    dotenv 
+    speech_recognition
     

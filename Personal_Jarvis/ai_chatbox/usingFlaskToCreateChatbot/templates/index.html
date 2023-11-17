@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot GUI</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #chat-container {
+            width: 800px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        #chat-box {
+            height: 700px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        #user-input {
+            display: flex;
+            padding: 10px;
+            background-color: #f7f7f7;
+        }
+
+        #user-message {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        #send-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #send-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <div id="user-input">
+            <input type="text" id="user-message" placeholder="Type a message...">
+            <button id="send-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userMessage = document.getElementById('user-message').value;
+            appendMessage('You: ' + userMessage);
+            
+            // Send the user message to the server
+            fetch('/get_response', {
+                method: 'POST',
+                body: new URLSearchParams({ 'user_message': userMessage }),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                var botResponse = data.bot_response;
+                appendMessage('Bot: ' + botResponse);
+            });
+            
+            // Clear the input field
+            document.getElementById('user-message').value = '';
+        }
+
+        function appendMessage(message) {
+            var chatBox = document.getElementById('chat-box');
+            var newMessage = document.createElement('div');
+            newMessage.innerText = message;
+            chatBox.appendChild(newMessage);
+
+            // Scroll to the bottom of the chat box
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+

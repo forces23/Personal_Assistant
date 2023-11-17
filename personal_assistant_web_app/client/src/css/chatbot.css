@@ -1,0 +1,112 @@
+/* chatbot.css */
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+  background-color: #212121;
+}
+
+.chatbot-container {
+  min-width: none; /* change if you want to set a min width */
+  max-width: 2000px;
+  margin: 0 auto;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-msg-container, .bot-msg-container {
+  display: flex;
+  width: auto;
+  max-width: 60%; /* Limit the width to 60% of chatbot-container */
+  align-items: center; /* Vertically align child elements */
+} 
+
+.user-msg-container {
+  justify-content: flex-end; /* Align items to the right for user messages */
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.bot-msg-container {
+  justify-content: flex-start; /* Align items to the left for bot messages */
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.chatbot-messages {
+  padding: 10px;
+  background-color: #b5b5b5;/* #8e8e8e; */
+  overflow-y: auto;
+  max-height: 1000px;
+  min-height: 600px;
+}
+
+.user-message, .bot-response {
+  /* display: inline-block; */
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: #155724 solid 1px;
+  max-width: 100%; /* Allow the width to adjust based on content length */
+  white-space: pre-line; /* Preserve whitespace and line breaks */
+}
+
+.user-message {
+  background-color: #f3f3f3;
+  color: #155724;
+  text-align: right;
+  /*margin-left: auto; /* Align user messages to the right */
+}
+
+.bot-response {
+  background-color: #d8d8d8;
+  color: #155724;
+}
+
+.chatbot-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #878787;
+}
+
+input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.user-image, .bot-image {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  border-radius: 50%; /* Optional: Create a circular profile image */
+  border: #000000 solid 1px;
+}
+
+.user-image {
+  margin-left: 8px; 
+  margin-right: 0; 
+}
+
+.bot-image {
+  margin-right: 8px; 
+  margin-left: 0; 
+}
