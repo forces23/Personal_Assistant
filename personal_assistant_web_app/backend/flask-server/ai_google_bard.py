@@ -29,7 +29,7 @@ except Exception as e:
     print(f"there was an error trying to connect to Bard API: {str(e)}")
     traceback.print_exc()
 
-def chat_with_bot(query):
+def chat_with_Bard(query):
     result = bard.get_answer(query)    
     print(result,"\n\n")
 

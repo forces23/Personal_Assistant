@@ -20,7 +20,7 @@ client = OpenAI(
 
 ai_response_path = "backend\\flask-server\\output_wav_files\\ai_response.wav"
 
-def chat_with_bot(user_input):
+def chat_with_chatGPT(user_input):
     # print("Hello! I'm your AI chatbot. You can start chatting. Type 'exit' to quit.")
     
     # while True:

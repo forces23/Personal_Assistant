@@ -8,24 +8,9 @@ import aiImage from './resources/ai.png';
 const Chatbot = () => {
   const [userMessage, setUserMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
-  const [displayedMessage, setDisplayedMessage] = useState('');
 
   const handleUserMessageChange = (e) => {
     setUserMessage(e.target.value);
-  };
-
-  const simulateTyping = (message) => {
-    setDisplayedMessage(''); // Clear displayed message
-    let index = 0;
-
-    const typingInterval = setInterval(() => {
-      setDisplayedMessage((prevMessage) => prevMessage + message[index]);
-      index++;
-
-      if (index === message.length) {
-        clearInterval(typingInterval);
-      }
-    }, 30); // Adjust the typing speed by changing the interval duration
   };
 
   const handleSendMessage = async () => {
@@ -44,17 +29,12 @@ const Chatbot = () => {
 
     console.log(data)
 
-    // Simulate typing effect for the bot's response
-    simulateTyping(botResponse);
-
     // Update chat history
-    setTimeout(() => {
-      setChatHistory((prevHistory) => [
-        ...prevHistory,
-        { type: 'user', message: userMessage, image: userImage },
-        { type: 'bot', message: botResponse, image: aiImage},
-      ]);
-    }, botResponse.length * 100); // Adjust the delay based on typing speed
+    setChatHistory((prevHistory) => [
+      ...prevHistory,
+      { type: 'user', message: userMessage, image: userImage },
+      { type: 'bot', message: botResponse, image: aiImage},
+    ]);
 
     // Clear the input field after sending the message
     setUserMessage('');
@@ -81,14 +61,6 @@ const Chatbot = () => {
             
           </div>
         ))}
-
-        {/* Display the currently typing message
-        {displayedMessage && (
-          <div className="bot-response">
-            {displayedMessage}
-          </div>
-        )} */}
-
       </div>
 
       {/* Input field for user message */}
